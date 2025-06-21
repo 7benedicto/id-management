@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Report</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .report {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .report p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ID Management Report</h1>
+
+        <div class="report">
+            <p><strong>Number of Students Verified:</strong> {{ verified_students_count }}</p>
+            <p><strong>Number of IDs Printed:</strong> {{ ids_printed_count }}</p>
+            <p><strong>Number of IDs lost:</strong> {{ ids_lost_count }}</p>
+            <p><strong>Number of IDs replaced:</strong> {{ ids_replacement_requested_count }}</p>
+        </div>
+    </div>
+</body>
+</html>

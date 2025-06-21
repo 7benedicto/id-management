@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student ID Card</title>
+    <style>
+        .id-card {
+            width: 400px;
+            height: 250px;
+            border: 2px solid #000;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+        .id-card .title {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .id-card .title h1 {
+            font-size: 18px;
+            margin: 0;
+            font-weight: bold;
+        }
+        .id-card .title h2 {
+            font-size: 14px;
+            margin: 5px 0 10px 0;
+            font-weight: normal;
+        }
+        .id-card img {
+            width: 80px;
+            height: 100px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .id-card .details {
+            margin-top: 10px;
+        }
+        .id-card .details p {
+            margin: 5px 0;
+        }
+        .id-card .university-logo {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+        .separator {
+            border: 1px solid #000;
+            margin: 20px 0;
+        }
+        button {
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="id-card">
+        <div class="title">
+            <h1>ARDHI UNIVERSITY</h1>
+            <h2>Official Student Identification</h2>
+        </div>
+
+        <img src="{% static 'ids/images/logo.jpg' %}" alt="University Logo" class="university-logo">
+
+        <hr class="separator">
+
+        <div class="details">
+            <p><strong>Name:</strong> {{ student.name }}</p>
+            <p><strong>Student ID:</strong> {{ student.student_id }}</p>
+            <p><strong>Course:</strong> {{ student.course }}</p>
+            <p><strong>Year of Study:</strong> {{ student.year_of_study }}</p>
+            <p><strong>Mobile:</strong> {{ student.mobile }}</p>
+        </div>
+        <img src="path_to_student_photo.jpg" alt="Student Photo">
+    </div>
+
+    <button onclick="window.print()">Print ID</button>
+</body>
+</html>

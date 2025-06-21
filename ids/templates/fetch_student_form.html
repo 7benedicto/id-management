@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch Student</title>
+</head>
+<body>
+    <h2>Fetch Student from AMIS</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Fetch Student</button>
+    </form>
+</body>
+</html>

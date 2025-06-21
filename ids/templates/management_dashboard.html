@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="dashboard-container">
+    <div class="sidebar">
+        <div class="text-center">
+            <img src="{% static 'ids/images/logo.jpg' %}" alt="Ardhi Logo" class="img-fluid" style="max-width: 40%;">
+            <h4>ARDHI</h4>
+        </div>
+        <h2>Management</h2>
+        <ul>
+            <li><a href="{% url 'view_report' %}" class="button">View Reports</a></li>
+            <li><a href="{% url 'students_by_course' %}" class="button">View Students</a></li>
+            <li><a href="{% url 'view_verified_students' %}" class="button">View Verified Students</a></li>
+            <li><a href="{% url 'view_printed_ids' %}" class="button">View Printed IDs</a> </li>
+            <li><a href="{% url 'logout' %}" class="button">Logout</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h1>Management Dashboard</h1>
+        <p>Welcome to the Management dashboard where you can view reports.</p>
+        <!-- Additional Management-specific actions can be added here -->
+    </div>
+</div>
+{% endblock %}

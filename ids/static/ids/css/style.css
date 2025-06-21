@@ -1,0 +1,28 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+.sidebar {
+    height: 100vh;
+    background-color: #343a40;
+    color: #fff;
+    padding-top: 20px;
+}
+.sidebar a {
+    color: #fff;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+.sidebar a:hover {
+    background-color: #007bff;
+}
+.sidebar .active {
+    background-color: #007bff;
+}
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+.card {
+    margin-bottom: 20px;
+}

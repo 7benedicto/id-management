@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Lost ID</title>
+</head>
+<body>
+    <h2>Report Lost ID</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="student_id">Enter your Student ID:</label>
+        <input type="text" id="student_id" name="student_id" required>
+        <button type="submit">Report Lost ID</button>
+    </form>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>

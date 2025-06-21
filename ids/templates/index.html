@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Welcome to the ID Management System</h1>
+        <p>This system allows you to manage student IDs, verify student payments, and view reports on ID printing.</p>
+
+        <div class="actions">
+            <a href="{% url 'login' %}" class="button" >Login</a>
+        </div>
+    </div>
+{% endblock %}

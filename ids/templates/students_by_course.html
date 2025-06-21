@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Students by Course</title>
+    <link rel="stylesheet" href="{% static 'ids/css/students_by_course.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Students Grouped by Course</h2>
+
+        {% if grouped_students %}
+            {% for course, students in grouped_students.items %}
+                <h3>{{ course }}</h3>
+                <ul>
+                    {% for student in students %}
+                        <li>
+                            {{ student.name }} - {{ student.student_id }} - Payment Status: <span>{{ student.payment_status }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        {% else %}
+            <p class="no-students">No students available.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

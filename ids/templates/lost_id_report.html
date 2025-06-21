@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Lost ID</title>
+</head>
+<body>
+    <h2>Report Lost ID and Upload Loss Report</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if form.errors %}
+        <div style="color: red;">
+            <p>{{ form.errors }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>

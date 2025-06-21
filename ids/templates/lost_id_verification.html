@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handle Lost IDs</title>
+</head>
+<body>
+    <h2>Students Reporting Lost IDs</h2>
+
+    {% if student_details %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Name</th>
+                    <th>Student ID</th>
+                    <th>Report Uploaded</th>
+                    <th>Reported At</th>
+                    <th>Payment status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in student_details %}
+                <tr>
+                    <td>
+                        <input type="radio" name="student_id" value="{{ student.student_id }}">
+                    </td>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.student_id }}</td>
+                    <td><a href="{{ student.report_file.url }}">View Report</a></td>
+                    <td>{{ student.reported_at }}</td>
+                    <th>paid</th>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit">Verify for New ID</button>
+    {% else %}
+        <p>No students have reported lost IDs yet.</p>
+    {% endif %}
+</body>
+</html>

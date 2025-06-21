@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'ids/css/login.css' %}">
+</head>
+<body>
+    <h2>Login</h2>
+    <div class="login-orange">
+        <form method="post">
+            {% csrf_token %}
+            <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">Log In</button>
+            </div>
+            <a href="#" class="forgot">Forgot your email or password?</a>
+        </form>
+    </div>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>

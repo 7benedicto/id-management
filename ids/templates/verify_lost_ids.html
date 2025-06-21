@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Handle Lost IDs</title>
+</head>
+<body>
+    <h2>Handle Lost IDs for Verification</h2>
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Reported On</th>
+                    <th>Verify</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for report in lost_id_reports %}
+                    <tr>
+                        <td>{{ report.student.student.username }}</td>
+                        <td>{{ report.reported_on }}</td>
+                        <td>
+                            {% if not report.is_verified %}
+                                <input type="checkbox" name="verify" value="{{ report.id }}">
+                            {% else %}
+                                Verified
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit">Verify Selected Reports</button>
+    </form>
+</body>
+</html>

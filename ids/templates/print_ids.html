@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Print IDs</title>
+    <link rel="stylesheet" href="{% static 'ids/css/print_ids.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Print IDs for Verified Students</h2>
+        <form method="post">
+            {% csrf_token %}
+            <ul>
+                {% for student in students %}
+                <li>
+                    {{ student.name }} {{ student.mobile }} ({{ student.course }})
+                    <button type="submit" name="student_id" value="{{ student.id }}">Mark as Printed</button>
+                </li>
+                {% endfor %}
+            </ul>
+        </form>
+    </div>
+</body>
+</html>
